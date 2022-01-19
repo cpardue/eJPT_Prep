@@ -1,0 +1,238 @@
+Testnig out my N++
+
+OK
+
+2 - Networking: 
+	2.1 Protocols
+	
+	ISO/OSI Model
+	Application
+	Presentation
+	Session
+	Transport
+	Network
+	Data Link
+	Physical
+	
+	Reserved IP Addresses
+		0.0.0.0 - 0.255.255.255
+		127.0.0.0 127.255.255.255
+		192.168.0.0 - 194.168.255.255 Class B reserved
+		
+	Routing
+		ip route
+		route print
+	Routers with IP addresses.
+	Switches woh with MAC addresses.  - ARP
+	
+	TCP - Guaranteed delivery
+			Connection Orriented
+			Lower Throughput
+		3-Way Handshake
+		
+			SYN (Seq A, Ack 0)
+			SYN+ACK(Seq B, Ack A+1)
+			ACK (Seq A+2, Ack B+1
+			
+	UDP - Non guarenteed
+			Connectionless. 
+			Better throughput
+	
+	Ports
+		25 - SMTP
+		22 - SSH
+		80 - HTTP
+		110 - POP3
+		143 - IMAP
+		443 - HTTPS
+		137,138,139 - NetBios
+		115 - SFTP
+		23  - Telnet
+		21 - FTP
+		3389 - RDP
+		3309 - MySQL
+		1433 - MS SQL Server
+		
+	Netstat for current TCP connections. 
+	
+	IDS - Check Payload
+		NIDS - Network Intrustion Detection Systems (Typically on Router)
+		HIDS - Host Intrustion Detection Systems (Application logs,file-system etc)
+		
+	IPS - Intrusion Prevention Systems
+		Drop malicious requests. 
+	
+	NAT - reqrites souce IP typcially on Internet connections. Computer must use it as the default gateway. 
+	
+	DNS
+	Convert Name to IP Addresses
+		- Top Level Domain - TLD
+		- Domain 
+		- Sub Domain
+		- Host name
+	Reverse DNS - Ip to Name (If Admin configured)
+	
+	
+	
+3. Web Applicaitons
+	HTTP Basics
+	Stateless - Made staefull by use of cookies on the client side
+	Sessions on the server side. 
+	Client/Server exchange messages
+		Headers\r\n
+		\r\n
+		Message Body\r\n 
+		
+		
+		GET / HTTP/1.1
+		Host: www.elearnsecurity.com
+		User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:31.0) Gecko/20100101 Firefox/31.0 Iceweasel/31.2.0
+		Accept: text/html
+		Accept-Language: en-US,en;q=0.5
+		Accept-Encoding: gzip, deflate
+		Connection: keep-alive
+		
+		HTTP/1.1 200 OK
+		Date: Wed, 19 Nov 2014 10:06:45 GMT
+		Cache-Control: private, max-age=0
+		Content-Type: text/html; charset=UTF-8
+		Content-Encoding: gzip
+		Server: Apache/2.2.15 (CentOS)
+		Content-Length: 99043
+		
+		
+		< PAGE CONTENT > ...
+		
+		Responses
+			200 = OK
+			301 - Moved Permanently
+			302 - Found
+			403 - Forbidden
+			404 - Not Found
+			500 - Internal Server Error
+	HTTPS - protect HTTP by encryption layer
+	
+	SOP - Same Origin Policy
+		Javascript - Must match 
+			Protocol
+			Hostname
+			Port
+			
+			
+	Burp Suite
+		Interceptin proxy
+		
+4. Penetration Testing
+	Lifecycle
+		Find any and every vulnerability with least impact on production systems and servers.
+		
+		
+		Engagement 
+			|
+		Information Gathering  <-----
+			|						|
+		Footprinting and Scanning	|
+			|						|
+		Vulnerability Assessment	|
+			|						|
+		Exploitation  ---------------
+			|
+		Reporting
+		
+		
+	4.1 Engagement
+		Establish
+			- Type (Black, Grey Box)
+			- Time consuming
+			- Complexity of apps/services in scope
+			- Targets
+			Best to establish a sound and targeted proposal
+			Keep in mind the clients needs and infrastructure
+			Should include
+				- Clients needs. Your understanding of what's required. 
+				- The approach and methodology you'd like to use. Automated/manual scanning tools, testing, onsite etc. 
+				- Value analysis. Risks/Benefits
+				- Price and time estimate. 
+				- Penetration test or vulnerability assessment. Remote or onsite. etc. 
+				- Scope of the engagement. IP Addresses, network blocks, domain names. 
+			Legal Work - As a freelance. Different if work for an IT Services company. 
+				NDA
+					What can/can't do. 
+				Insurance 
+				Lawyers
+				Responsibility to keep information private and encrypted. 
+				Rules of Engagement
+					Scope of the engagement, time window, contacts. 
+		Information Gathering
+			General Information	(Names and email addresses) Good for social engineering. 
+				Board of Directors
+				Investors
+				Managers and Employees
+				Branch location and addresses. 
+			Infrastructure Information Gathering
+				Transform IP/domain details into servers and Operating Systems
+				WHOIS and DNS Information. 
+				Give meaning to every IP address in scope
+					Live/Not
+					Websites or other services
+						Harvest
+							Domains
+							Subdomains
+							Pages
+							Technologies (PHP, Java, .NET)
+							Frameworks(Drupal, Joomla, Wordpress)
+						Treat web applications as seperate enteties. 
+					What OS
+						No need to target Windows vulnerabilities on Linux hosts. 
+					Helps 
+						Focus efforts
+						Target attacks
+						Sharpen tools for exploitation phase
+		Footprinting and Scanning. 
+			Port scanning
+				nmap
+			Detecting services
+				nmap
+				Find OS, purpose of the IP address. importance of the host. 
+		Vulnerability Assessment
+			Building a list of the vulnerablities present
+			Assessment of each target identified previously. 
+			Manually or via Automated tools. 
+			Automated important to configure based on previous steps. 
+			Automated tools can help carry out a penetration test, but they will not perform a penetration test on their own. 
+		Exploitation
+			Checks and validates a vulnerability
+				Also widens and increases the privilages on the target systems and networks. 
+			Sucessfull exploitation expands the target network. 
+			Repeat theprocess from the information gathering phase
+			Ends when there are no more systems and services in-scope to exploit. 
+			Find any and all vulnerabilities. 
+		Reporting
+			Penetration test report. 
+			Official way to deliver results to:
+				Execs. 
+				IT Staff
+				Development Team
+			Shows and explains the result of the tests and is the actual deliverabile of the engagement. 
+			Must contain. 
+				Techniques used. 
+				Vulnerabilities found
+				Exploits used. 
+				Impact and risk analysis for each vulnerability
+				Remediation tips. 
+			Real value for the client
+			Provides useful suggestions and techniques. Very important. 
+		Consultancy
+			Penetration testsers asked to provide some hours of consultancy after delivering the report. 
+			Additional service. 
+		Keep all engagement details in an encrypted and safe place or destroy it. 
+		
+		Secret of a sucessful test - Picture the systems in scope as a target. 
+			Information gathering and fingerprinting widens the target. 
+			Also called Widening the attack surface. 
+			Targeted attacks are less likely to trigger an alarm in the victims defense system. 
+			
+			
+					
+					
+					
