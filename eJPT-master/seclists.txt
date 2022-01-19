@@ -1,6 +1,0 @@
-[eJPT]A security knowledge base called Seclists
-
-#apt-get update
-#apt-get install seclists
-#cd /usr/share/seclists
-#ll
